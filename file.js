@@ -28,6 +28,11 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, { "content-type": "image/png" });
     res.end(img);
   }
+  if (req.url === "/file.js") {
+    const jsFile = await readFile("./file.js", "utf-8");
+    res.writeHead(200, { "content-type": "text/javascript" });
+    res.end(jsFile);
+  }
 });
 server.listen(3000, "0.0.0.0", () => {
   console.log("3000");
