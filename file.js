@@ -10,7 +10,7 @@ const server = createServer(async (req, res) => {
   }
 
   //   JSON Example
-  if (req.url === "/json") {
+  if (req.url === "/info") {
     res.writeHead(200, { "content-type": "application/json" });
     const jsonFile = await readFile("./data.json", "utf-8");
     res.end(jsonFile);
@@ -21,6 +21,12 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, { "content-type": "text/plain" });
     const textFile = await readFile("./hello.txt", "utf-8");
     res.end(textFile);
+  }
+
+  if (req.url === "/mc.png") {
+    const img = await readFile("./mc.png");
+    res.writeHead(200, { "content-type": "image/png" });
+    res.end(img);
   }
 });
 server.listen(3000, "0.0.0.0", () => {
