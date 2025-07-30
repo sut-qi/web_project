@@ -23,6 +23,6 @@ const server = createServer(async (req, res) => {
     res.end(textFile);
   }
 });
-server.listen(3000, "47.94.211.51", () => {
-  console.log("Listen on 47.94.211.51:3000");
+server.listen(3000, "0.0.0.0", () => {
+  console.log("3000");
 });
