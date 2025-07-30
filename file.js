@@ -28,8 +28,8 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, { "content-type": "image/png" });
     res.end(img);
   }
-  if (req.url === "/file.js") {
-    const jsFile = await readFile("./file.js", "utf-8");
+  if (req.url === "/hello.js") {
+    const jsFile = await readFile("./hello.js", "utf-8");
     res.writeHead(200, { "content-type": "text/javascript" });
     res.end(jsFile);
   }
