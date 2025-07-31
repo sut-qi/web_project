@@ -19,4 +19,4 @@ async function fetchJoke() {
 }
 button.addEventListener("click", fetchJoke);
 
-document.addEventListener("DOMContentLoaded", fetchJoke());
+document.addEventListener("DOMContentLoaded", fetchJoke);

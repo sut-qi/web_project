@@ -19,6 +19,21 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, { "content-type": "text/javascript" });
     res.end(jsFile);
   }
+
+  if (req.url === "/hello.css") {
+    const cssFile = await readFile("./hello.css", "utf-8");
+    res.writeHead(200, { "content-type": "text/css" });
+    res.end(cssFile);
+  }
+
+  if (req.url === "/favicon.ico") {
+    const favicon = await readFile("./favicon.ico");
+    res.writeHead(200, { "content-type": "image/x-icon" });
+    res.end(favicon);
+  } else {
+    res.writeHead(404, { "content-type": "text/plain" });
+    res.end("404 Not Found");
+  }
 });
 server.listen(3000, "0.0.0.0", () => {
   console.log("3000");
