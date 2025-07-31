@@ -28,7 +28,10 @@ const server = createServer(async (req, res) => {
 
   if (req.url === "/favicon.ico") {
     const favicon = await readFile("./favicon.ico");
-    res.writeHead(200, { "content-type": "image/x-icon" });
+    res.writeHead(200, {
+      "content-type": "image/x-icon",
+      "cache-control": "no-cache",
+    });
     res.end(favicon);
   } else {
     res.writeHead(404, { "content-type": "text/plain" });
