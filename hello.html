@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sad Fish</title>
-    <style>
-      .img {
-        width: 40vw;
-        display: flex;
-        margin-bottom: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="hello.css" />
   </head>
   <body>
-    <h1>Hello Vegetable fish! Be happy!</h1>
+    <div id="container">
+      <h1>Hello Vegetable fish! Be happy!</h1>
 
-    <img src="mc.png" alt="Minecraft Image" class="img" />
+      <div>
+        <img src="mc.png" alt="Minecraft Image" class="img" />
+      </div>
 
-    <button style="width: 15vw; height: 3vw; text-size-adjust: 80%">
-      再来一个
-    </button>
+      <button class="button">
+        <span class="label">Another One</span>
+        <span class="gradient-container">
+          <span class="gradient"></span>
+        </span>
+      </button>
 
-    <div class="jockes"></div>
+      <div class="joke"></div>
 
-    <script src="hello.js"></script>
+      <script src="hello.js"></script>
+    </div>
   </body>
 </html>
